@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import static org.testng.Assert.*;
+import static io.restassured.RestAssured.*;
 /*
 public class GetWeatherDetails {
 	
@@ -60,10 +61,12 @@ import java.sql.Statement;
 	  public void testGetWeatherData() {
 
 	    // Set base URI
-	    RestAssured.baseURI = "https://api.accuweather.com";
+	    baseURI = "https://api.accuweather.com";
 
 	    // Send GET request with query parameter
-	    Response response = RestAssured.given()
+	    Response response = 
+	    		
+	    given()
 	        .queryParam("q", "Mumbai")
 	        .queryParam("apikey", "YOUR_API_KEY_HERE")
 	        .get("/your/weather/api/endpoint");
